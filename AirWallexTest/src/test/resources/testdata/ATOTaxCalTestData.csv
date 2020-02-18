@@ -1,0 +1,4 @@
+incomeYear,   taxableIncome,    residencyStatus,			monthsOfResidency,	calculatedTaxExpected
+2016-17,      100000,           Resident for full year,		NA,					24632.00
+2017-18,      120000,           Non-resident for full year, NA,					40485.00
+2018-19,      130000,			Part-year resident,			6,					36046.92	
