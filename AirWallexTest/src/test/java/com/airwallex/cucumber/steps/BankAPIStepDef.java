@@ -8,7 +8,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
 
-import com.airwallex.cucumber.serenity.AccNumberSteps;
+
 import com.airwallex.cucumber.serenity.BankAPISteps;
 import com.airwallex.pojo.Bankdetails;
 import com.airwallex.utils.ReusableSpecifications;
