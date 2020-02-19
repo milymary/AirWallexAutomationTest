@@ -43,8 +43,8 @@ public class BankAPIStepDef {
 	@Steps
 	BankAPISteps bankdetails;
 
-	@Steps
-	AccNumberSteps accNumber;
+	//@Steps
+	//AccNumberSteps accNumber;
 
 	@Given("^Add Bank Details Payload with payment method\"([^\"]*)\" country code\"([^\"]*)\" acc name\"([^\"]*)\" acc number\"([^\"]*)\" swift code\"([^\"]*)\" bsb\"([^\"]*)\" aba\"([^\"]*)\"$")
 	public void add_Bank_Details_Payload(String payment_method, String bank_country_code, String account_name,

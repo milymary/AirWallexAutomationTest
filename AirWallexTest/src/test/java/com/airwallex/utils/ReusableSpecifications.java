@@ -33,12 +33,13 @@ public class ReusableSpecifications {
 	public static ResponseSpecBuilder respSpecBuilder;
 	public static ResponseSpecification respSpecification;
 
-	
-	// method to return value of key passed into this method - value is being picked from global.properties file
+	// method to return value of key passed into this method - value is being picked
+	// from global.properties file
 	public static String getGlobalValue(String key) throws IOException {
 		Properties prop = new Properties();
-		FileInputStream fis = new FileInputStream(System.getProperty("user.dir") + "/src/test/java/com/airwallex/utils/global.properties");
-		
+		FileInputStream fis = new FileInputStream(
+				System.getProperty("user.dir") + "/src/test/java/com/airwallex/utils/global.properties");
+
 		prop.load(fis);
 		return prop.getProperty(key);
 	}
