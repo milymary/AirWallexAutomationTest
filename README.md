@@ -22,6 +22,8 @@ Built With:
 	•	Re-usable Request Specification methods
 	•	Serenity reports
 	•	Cucumber data tables and data driven testing using Examples
+	•   Logging file
+
 
 Requirements:
 
@@ -40,12 +42,14 @@ Set Up:
 	  $mvn clean verify serenity:aggregate
 
 
+
 	
 Reporting:
 
 	Reports for each module are written into their respective /target directories after a successful run.
 	Serenity reports get generated once a successful build run has been completed.
 	These can be accessed from the AirWallexAutomationTestt/target/site/serenity/index.html 
+	Logging.txt will contain all the request payloads and the responses captured.
 
 	
 Authors:
