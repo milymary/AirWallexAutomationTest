@@ -1,7 +1,8 @@
-Feature: Automation Test - MLCInsurance
+Feature: Automation Tests -  Air Wallex Bank API scenarios
 
-	Scenario Outline: Test1- Check form validation for the Request a LifeView demo for MLCInsurance Lifeview 
-	#Given All Mandatory fields <incomeYear>, <taxableIncome>, <residencyStatus>, <monthsOfResidency> are filled in the form and submitted
+	#--------------------------- Positive Scenarios ------------------------------------------------------#
+	@positivescenarios_AddBankDetailsAPI
+	Scenario Outline: Test1- Positive scenarios validation  
 	Given Add Bank Details Payload with payment method"<payment_method>" country code"<bank_country_code>" acc name"<account_name>" acc number"<account_number>" swift code"<swift_code>" bsb"<bsb>" aba"<aba>"
 	When User calls "AddBankDetailsAPI" with "POST" http request
 	Then API call is a success with status code "200"
@@ -9,8 +10,98 @@ Feature: Automation Test - MLCInsurance
 	
 	Examples:
 	
-	|payment_method	|bank_country_code|account_name |account_number |swift_code |bsb 		|aba 	   |
-	|SWIFT			|US			    |TestUser1	 |123			|ICBCUSBJ  |NA  		|11122233A |
+	|payment_method	|bank_country_code|account_name  |account_number |swift_code |bsb 		|aba 	   |
+	|SWIFT			|US			      |TestUser1	 |123			 |ICBCUSBJ 	 |  		|11122233A |
+	|LOCAL			|AU			      |TestUser2	 |123987		 |ICBKAUBJ	 |876098  	|		   |
+	|LOCAL			|CN			      |TestUser3	 |123987234		 |ICBLCNBJ	 |		  	|		   |
 	
 
+	#--------------------------- Negative Scenarios ------------------------------------------------------#
+	#--------------------------- AccNumber Scenarios -----#
+
+	@negativescenarios_AddBankDetailsAPI
+	@negative_accountNumberLength
+	@negative_AccNumberScenarios
+	Scenario Outline: Test2- Negative checks validation for Account Field Length 
+	Given Add Bank Details Payload with payment method"<payment_method>" country code"<bank_country_code>" acc name"<account_name>" acc number"<account_number>" swift code"<swift_code>" bsb"<bsb>" aba"<aba>"
+	When User calls "AddBankDetailsAPI" with "POST" http request
+	And Verify "<account_number>" length for the country "<bank_country_code>"
+	Then API call is a success with status code "400"
+	And "error" status in response body says "Length of account_number should be between 7 and 11 when bank_country_code is 'US'" 
 	
+	Examples:
+	
+	|payment_method	|bank_country_code|account_name  |account_number |swift_code |bsb 		|aba 	   |
+	|SWIFT			|AU			      |TestUser4	 |345			 |ICBKAUBJ 	 |876098  	|11122233A |
+	|LOCAL			|CN			      |TestUser5	 |876			 |ICBKCNBJ 	 |  		|11122233A |
+	|LOCAL			|US			      |TestUser6	 |985756453435746743426424267584656575657|ICBKUSBJ|11122233A|
+	
+	@negativescenarios_AddBankDetailsAPI
+	@negative_accountNumberError
+	@negative_AccNumberScenarios
+	Scenario Outline: Test3- Negative checks validation for Account Number Error
+	Given Add Bank Details Payload with payment method"<payment_method>" country code"<bank_country_code>" acc name"<account_name>" acc number"<account_number>" swift code"<swift_code>" bsb"<bsb>" aba"<aba>"
+	When User calls "AddBankDetailsAPI" with "POST" http request
+	And Verify "<account_number>" content 
+	Then API call is a success with status code "400"
+	And "error" status in response body says "'account_number' is required" 
+	
+	Examples:
+	
+	|payment_method	|bank_country_code|account_name  |account_number |swift_code |bsb 		|aba 	   |
+	|SWIFT			|AU			      |TestUser1	 |				 |ICBCAUBJ 	 |756476  	|		   |
+	
+	
+	
+	
+	#--------------------------- SwiftCode Scenarios -----#
+	
+	
+	
+	@negativescenarios_AddBankDetailsAPI
+	@negative_swiftCodeLength
+	@negative_swiftCodeScenarios
+	Scenario Outline: Test4- Negative checks validationon for Swift Code Length
+	Given Add Bank Details Payload with payment method"<payment_method>" country code"<bank_country_code>" acc name"<account_name>" acc number"<account_number>" swift code"<swift_code>" bsb"<bsb>" aba"<aba>"
+	When User calls "AddBankDetailsAPI" with "POST" http request
+	And Verify "<payment_method>" length
+	Then API call is a success with status code "400"
+	And "error" status in response body says "Length of 'swift_code' should be either 8 or 11"
+	
+	Examples:
+	
+	|payment_method	|bank_country_code|account_name  |account_number |swift_code |bsb 		|aba 	   |
+	|SWIFT			|US			      |TestUser1	 |123			 |ICBCUSBJ 	 |  		|11122233A |
+	
+	
+	@negativescenarios_AddBankDetailsAPI
+	@negative_swiftCodeError
+	@negative_swiftCodeScenarios
+	Scenario Outline: Test5- Negative checks validationon for Swift Code Error 
+	Given Add Bank Details Payload with payment method"<payment_method>" country code"<bank_country_code>" acc name"<account_name>" acc number"<account_number>" swift code"<swift_code>" bsb"<bsb>" aba"<aba>"
+	When User calls "AddBankDetailsAPI" with "POST" http request
+	And Verify "<payment_method>" content
+	Then API call is a success with status code "400"
+	And "error" status in response body says "The swift code is not valid for the given bank country code: US"
+	
+	Examples:
+	
+	|payment_method	|bank_country_code|account_name  |account_number |swift_code |bsb 		|aba 	   |
+	|SWIFT			|US			      |TestUser1	 |123			 |ICBCUSBJ 	 |  		|11122233A |
+	
+	
+	
+	
+	
+	#  BSB IS REQUIRED WHN COUNTRY IS au 
+#	{
+#    "payment_method": "SWIFT",
+ #   "bank_country_code": "AU",
+  #  "account_name": "TestUser3",
+   # "account_number": "123222245",
+   # "swift_code": "ICBKAUBJ",
+  #  "bsb": "",
+ #   "aba": "11122233A"
+#
+#}*/
+#

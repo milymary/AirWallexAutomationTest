@@ -16,14 +16,6 @@ public class TestDataBuild {
 		bankdetailspojo.setbsb(bsb);
 		bankdetailspojo.setaba(aba);
 		
-		bankdetailspojo.setpayment_method("SWIFT");
-		bankdetailspojo.setbank_country_code("US");
-		bankdetailspojo.setaccount_name("TestUser1");
-		bankdetailspojo.setaccount_number("123");
-		bankdetailspojo.setswift_code(swift_code);
-		bankdetailspojo.setbsb("");
-		bankdetailspojo.setaba("11122233A");
-		
 		
 		
 		return bankdetailspojo;

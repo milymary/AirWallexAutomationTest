@@ -8,6 +8,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
 
+import com.airwallex.cucumber.serenity.AccNumberSteps;
 import com.airwallex.cucumber.serenity.BankAPISteps;
 import com.airwallex.pojo.Bankdetails;
 import com.airwallex.utils.ReusableSpecifications;
@@ -30,60 +31,70 @@ import net.thucydides.junit.annotations.UseTestDataFrom;
 //@RunWith(SerenityParameterizedRunner.class)
 //@UseTestDataFrom("testdata/ATOTaxCalTestData.csv")
 
-public class BankAPIStepDef extends ReusableSpecifications {
+public class BankAPIStepDef  {
 	
 	
-	RequestSpecification reqSpec;
-	ResponseSpecification resSpec;
+	
 	Response res;
 	
 	TestDataBuild data= new TestDataBuild();
 	
 	
-	@Managed(driver="chrome", uniqueSession = true)                              
-	WebDriver driver;
+	//@Managed(driver="chrome", uniqueSession = true)                              
+	//WebDriver driver;
  
 	@Steps
 	BankAPISteps bankdetails;
-	//ATOSimpleTaxCalcSteps ATOCalc;
+	
+	@Steps
+	AccNumberSteps accNumber;
 	
 	
 	
-	@Given("^Add Bank Details Payload with payment method\"([^\"]*)\" country code\"([^\"]*)\" acc name\"([^\"]*)\" acc number\"([^\"]*)\" swift code\"([^\"]*)\" bsb\"([^\"]*)\" aba\"([^\"]*)\"$")
-	public void add_Bank_Details_Payload(String payment_method, String bank_country_code, String account_name, String account_number, String swift_code, String bsb, String aba) throws Exception {
-		
-		System.out.println("milyyy");
-		
-		bankdetails.postPayload(payment_method, bank_country_code, account_name, account_number, swift_code, bsb, aba);
-		
+		@Given("^Add Bank Details Payload with payment method\"([^\"]*)\" country code\"([^\"]*)\" acc name\"([^\"]*)\" acc number\"([^\"]*)\" swift code\"([^\"]*)\" bsb\"([^\"]*)\" aba\"([^\"]*)\"$")
+		public void add_Bank_Details_Payload(String payment_method, String bank_country_code, String account_name, String account_number, String swift_code, String bsb, String aba) throws Exception {
 			
+			System.out.println("milyyy");
+			bankdetails.postPayload(payment_method, bank_country_code, account_name, account_number, swift_code, bsb, aba);
 			
-	
-	}
+				
+		
+		}
 	
 		
 		@When("^User calls \"([^\"]*)\" with \"([^\"]*)\" http request$")
-		public void user_calls_with_http_request(String arg1, String arg2) {
+		public void user_calls_with_http_request(String resource, String httpMethod) {
 		    
-			
+			bankdetails.callHTTPRequest(resource,httpMethod);
 		}
 		
 		@Then("^API call is a success with status code \"([^\"]*)\"$")
-		public void api_call_is_a_success_with_status_code(String arg1) {
+		public void api_call_is_a_success_with_status_code(String statusCode) {
 		   
-			
+			bankdetails.verifyResponseCode(statusCode);
 			
 		}
 		
 		@Then("^\"([^\"]*)\" status in response body says \"([^\"]*)\"$")
-		public void status_in_response_body_says(String arg1, String arg2) {
+		public void status_in_response_body_says(String responseKey, String responseValue) {
 		   
-			
+			bankdetails.verifyResponseValueForKey(responseKey,responseValue);
 			
 		}
 
 
-	
-	
+		@When("^Verify \"([^\"]*)\" length for the country \"([^\"]*)\"$")
+		public void verify_length_for_the_country(String account_number, String bank_country_code) {
+			//bankdetails.verifyLength(account_number, bank_country_code);
+			accNumber.verifyLength(account_number,bank_country_code);
+		}
+		
+
+		@When("^Verify \"([^\"]*)\" content$")
+		public void verify_content(String account_number) {
+			accNumber.verifyContent(account_number);
+		}
+
+		
 
 }
