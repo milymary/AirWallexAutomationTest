@@ -12,6 +12,108 @@ Multiparts:		<none>
 Body:
 {
     "payment_method": "SWIFT",
+    "bank_country_code": "US",
+    "account_name": "TestUser1",
+    "account_number": "123",
+    "swift_code": "ICBCUSBJ",
+    "bsb": "",
+    "aba": "11122233A"
+}
+HTTP/1.1 200 OK
+X-Powered-By: Express
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept
+Content-Type: application/json; charset=utf-8
+Content-Length: 32
+ETag: W/"20-RSynxcE0cLbM1GvqyRovjufvmXw"
+Date: Wed, 19 Feb 2020 23:24:15 GMT
+Connection: keep-alive
+
+{
+    "success": "Bank details saved"
+}
+Request method:	POST
+Request URI:	http://preview.airwallex.com:30001/bank
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		Accept=*/*
+				Content-Type=application/json; charset=UTF-8
+Cookies:		<none>
+Multiparts:		<none>
+Body:
+{
+    "payment_method": "LOCAL",
+    "bank_country_code": "AU",
+    "account_name": "TestUser2",
+    "account_number": "123987",
+    "swift_code": "ICBKAUBJ",
+    "bsb": "876098",
+    "aba": ""
+}
+HTTP/1.1 200 OK
+X-Powered-By: Express
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept
+Content-Type: application/json; charset=utf-8
+Content-Length: 32
+ETag: W/"20-RSynxcE0cLbM1GvqyRovjufvmXw"
+Date: Wed, 19 Feb 2020 23:24:16 GMT
+Connection: keep-alive
+
+{
+    "success": "Bank details saved"
+}
+Request method:	POST
+Request URI:	http://preview.airwallex.com:30001/bank
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		Accept=*/*
+				Content-Type=application/json; charset=UTF-8
+Cookies:		<none>
+Multiparts:		<none>
+Body:
+{
+    "payment_method": "LOCAL",
+    "bank_country_code": "CN",
+    "account_name": "TestUser3",
+    "account_number": "123987234",
+    "swift_code": "ICBLCNBJ",
+    "bsb": "",
+    "aba": ""
+}
+HTTP/1.1 200 OK
+X-Powered-By: Express
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept
+Content-Type: application/json; charset=utf-8
+Content-Length: 32
+ETag: W/"20-RSynxcE0cLbM1GvqyRovjufvmXw"
+Date: Wed, 19 Feb 2020 23:24:16 GMT
+Connection: keep-alive
+
+{
+    "success": "Bank details saved"
+}
+Request method:	POST
+Request URI:	http://preview.airwallex.com:30001/bank
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		Accept=*/*
+				Content-Type=application/json; charset=UTF-8
+Cookies:		<none>
+Multiparts:		<none>
+Body:
+{
+    "payment_method": "SWIFT",
     "bank_country_code": "AU",
     "account_name": "TestUser4",
     "account_number": "345",
@@ -26,7 +128,7 @@ Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept
 Content-Type: application/json; charset=utf-8
 Content-Length: 94
 ETag: W/"5e-YVuagmznE6odyYw/9inHioZLp0Q"
-Date: Wed, 19 Feb 2020 10:23:09 GMT
+Date: Wed, 19 Feb 2020 23:24:16 GMT
 Connection: keep-alive
 
 {
@@ -60,7 +162,7 @@ Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept
 Content-Type: application/json; charset=utf-8
 Content-Length: 94
 ETag: W/"5e-YVuagmznE6odyYw/9inHioZLp0Q"
-Date: Wed, 19 Feb 2020 10:23:09 GMT
+Date: Wed, 19 Feb 2020 23:24:16 GMT
 Connection: keep-alive
 
 {
@@ -94,7 +196,7 @@ Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept
 Content-Type: application/json; charset=utf-8
 Content-Length: 94
 ETag: W/"5e-YVuagmznE6odyYw/9inHioZLp0Q"
-Date: Wed, 19 Feb 2020 10:23:09 GMT
+Date: Wed, 19 Feb 2020 23:24:16 GMT
 Connection: keep-alive
 
 {
@@ -115,7 +217,7 @@ Body:
 {
     "payment_method": "SWIFT",
     "bank_country_code": "AU",
-    "account_name": "TestUser1",
+    "account_name": "TestUser7",
     "account_number": "",
     "swift_code": "ICBCAUBJ",
     "bsb": "756476",
@@ -128,9 +230,145 @@ Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept
 Content-Type: application/json; charset=utf-8
 Content-Length: 40
 ETag: W/"28-OAD4eMjjtdwv9gc3FRJyjVTy75M"
-Date: Wed, 19 Feb 2020 10:23:09 GMT
+Date: Wed, 19 Feb 2020 23:24:17 GMT
 Connection: keep-alive
 
 {
     "error": "'account_number' is required"
+}
+Request method:	POST
+Request URI:	http://preview.airwallex.com:30001/bank
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		Accept=*/*
+				Content-Type=application/json; charset=UTF-8
+Cookies:		<none>
+Multiparts:		<none>
+Body:
+{
+    "payment_method": "SWIFT",
+    "bank_country_code": "US",
+    "account_name": "TestUser8",
+    "account_number": "123",
+    "swift_code": "ICBC",
+    "bsb": "",
+    "aba": "11122233A"
+}
+HTTP/1.1 400 Bad Request
+X-Powered-By: Express
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept
+Content-Type: application/json; charset=utf-8
+Content-Length: 59
+ETag: W/"3b-MmPBIEUJTd8cx1VD8U5TtN0P6ac"
+Date: Wed, 19 Feb 2020 23:24:17 GMT
+Connection: keep-alive
+
+{
+    "error": "Length of 'swift_code' should be either 8 or 11"
+}
+Request method:	POST
+Request URI:	http://preview.airwallex.com:30001/bank
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		Accept=*/*
+				Content-Type=application/json; charset=UTF-8
+Cookies:		<none>
+Multiparts:		<none>
+Body:
+{
+    "payment_method": "SWIFT",
+    "bank_country_code": "US",
+    "account_name": "TestUser9",
+    "account_number": "985756453",
+    "swift_code": "ICBKAUBJ",
+    "bsb": "",
+    "aba": "11122233A"
+}
+HTTP/1.1 400 Bad Request
+X-Powered-By: Express
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept
+Content-Type: application/json; charset=utf-8
+Content-Length: 75
+ETag: W/"4b-Ajvnz4gnq53r4N7dJjcyO5I+GeI"
+Date: Wed, 19 Feb 2020 23:24:17 GMT
+Connection: keep-alive
+
+{
+    "error": "The swift code is not valid for the given bank country code: US"
+}
+Request method:	POST
+Request URI:	http://preview.airwallex.com:30001/bank
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		Accept=*/*
+				Content-Type=application/json; charset=UTF-8
+Cookies:		<none>
+Multiparts:		<none>
+Body:
+{
+    "payment_method": "SWIFT",
+    "bank_country_code": "US",
+    "account_name": "TestUser9",
+    "account_number": "985756453",
+    "swift_code": "",
+    "bsb": "",
+    "aba": "11122233A"
+}
+HTTP/1.1 400 Bad Request
+X-Powered-By: Express
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept
+Content-Type: application/json; charset=utf-8
+Content-Length: 67
+ETag: W/"43-etrvhGb8n43JMHoUVDHmiz9COmo"
+Date: Wed, 19 Feb 2020 23:24:17 GMT
+Connection: keep-alive
+
+{
+    "error": "'swift_code' is required when payment method is 'SWIFT'"
+}
+Request method:	POST
+Request URI:	http://preview.airwallex.com:30001/bank
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		Accept=*/*
+				Content-Type=application/json; charset=UTF-8
+Cookies:		<none>
+Multiparts:		<none>
+Body:
+{
+    "payment_method": "SWIFT",
+    "bank_country_code": "AU",
+    "account_name": "TestUser10",
+    "account_number": "123222245",
+    "swift_code": "ICBKAUBJ",
+    "bsb": "",
+    "aba": "11122233A"
+}
+HTTP/1.1 400 Bad Request
+X-Powered-By: Express
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept
+Content-Type: application/json; charset=utf-8
+Content-Length: 60
+ETag: W/"3c-ct28dMpApGA7Bo3phN/AAUhREAE"
+Date: Wed, 19 Feb 2020 23:24:17 GMT
+Connection: keep-alive
+
+{
+    "error": "'bsb' is required when bank country code is 'AU'"
 }

@@ -8,7 +8,7 @@ import net.serenitybdd.cucumber.CucumberWithSerenity;
 @RunWith(CucumberWithSerenity.class)
 @CucumberOptions(
 		features="src/test/resources/feature/",
-		tags= {"@negative_AccNumberScenarios"}
+		tags= {"~@_AddBankDetailsAPI"}
 		
 		) 
 public class testrunner {

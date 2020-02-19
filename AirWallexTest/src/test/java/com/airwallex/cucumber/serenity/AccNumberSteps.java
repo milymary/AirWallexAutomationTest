@@ -9,7 +9,7 @@ import io.restassured.specification.ResponseSpecification;
 import net.thucydides.core.annotations.Step;
 
 public class AccNumberSteps extends ReusableSpecifications {
-
+/*
 	public int expectedMinLength;
 	public int expectedMaxLength;
 	public int length_AccNumber;
@@ -71,5 +71,5 @@ public class AccNumberSteps extends ReusableSpecifications {
 		}
 		
 	}
-
+*/
 }
