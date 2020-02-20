@@ -40,6 +40,7 @@ Set Up:
 	- Make sure you have the above requirements set up on your machine.
 	- Access the project folder from your console/terminal and give the following commands:
 	  $mvn clean verify serenity:aggregate
+	- To change the run environment , pls change the details of baseuri properties in global.properties file within (src/test/java/utils) 
 
 
 
