@@ -2,20 +2,15 @@ package com.airwallex.cucumber.serenity;
 
 import static org.junit.Assert.assertEquals;
 
-import org.hamcrest.core.Is;
-import org.hamcrest.core.IsEqual;
-
 import com.airwallex.utils.APIResources;
 import com.airwallex.utils.ReusableSpecifications;
 import com.airwallex.utils.TestDataBuild;
 
-import io.restassured.RestAssured;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 import io.restassured.specification.ResponseSpecification;
 import net.serenitybdd.rest.SerenityRest;
 import net.thucydides.core.annotations.Step;
-import net.thucydides.junit.annotations.TestData;
 
 public class BankAPISteps extends ReusableSpecifications {
 

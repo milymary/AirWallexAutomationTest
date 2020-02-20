@@ -21,8 +21,6 @@ import java.io.PrintStream;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
-import org.jruby.ir.instructions.GetGlobalVariableInstr;
-
 public class ReusableSpecifications {
 
 	// req builder and req specification type static variables
